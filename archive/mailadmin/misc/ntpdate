@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/usr/sbin/ntpdate clock.redhat.com
+

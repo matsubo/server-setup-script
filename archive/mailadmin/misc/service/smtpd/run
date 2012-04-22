@@ -1,0 +1,4 @@
+#!/bin/sh
+exec env - PATH="/usr/local/bin:/var/qmail/bin:$PATH" \
+tcpserver -R -H -l0 -v -c 40 -x /service/smtpd/smtp.cdb -u qmaild -g nofiles 0 smtp qmail-smtpd 2>&1
+

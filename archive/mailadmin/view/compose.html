@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+
+<link href="main.css" style="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>メール作成</h1>
+<form name="form1" id="form1" method="post" action="confirm.php">
+<table width="75%" border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <td>Fromアドレス</td>
+    <td><input name="from" type="text" id="from" size="50" value="" /></td>
+  </tr>
+  <tr>
+    <td>件名</td>
+    <td><input name="subject" type="text" id="subject" size="50" />    </td>
+  </tr>
+  <tr>
+    <td>文面</td>
+    <td><p>
+      <textarea name="body" cols="50" rows="10" wrap="OFF" id="body"></textarea>
+    </p>
+      </td>
+  </tr>
+  <tr>
+    <td>配信時間</td>
+    <td>{year} 年 {month} 月 {day} 日 - {hour} 時 {minute} 分</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+
+    <td>
+<input type="hidden" name="g_group_id" value="{g_group_id}" />
+<input type="submit" name="Submit" value="確認" />    </td>
+  </tr>
+</table>
+</form>
+<br />
+<a href="list.php">一覧へ戻る</a>
+
+<br />
+</body>
+</html>
+
+
+
+
+
+
+
+
+

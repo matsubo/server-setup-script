@@ -1,0 +1,5 @@
+#!/bin/sh
+exec \
+setuidgid qmaill \
+multilog t /var/log/pop3d
+

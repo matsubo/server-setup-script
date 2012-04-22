@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+PATH=$PATH:/usr/local/bin
+exec \
+setuidgid qmaill \
+multilog t /var/log/qmail
+#
+

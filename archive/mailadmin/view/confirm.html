@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+
+<link href="main.css" style="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>メール確認</h1>
+<form name="form1" id="form1" method="post" action="send.php">
+<table width="75%" border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <td>Fromアドレス</td>
+    <td>{from}</td>
+  </tr>
+  <tr>
+    <td>件名</td>
+    <td>{subject}
+    </td>
+  </tr>
+  <tr>
+    <td>文面</td>
+    <td><p>
+      <pre>{body}</pre>
+    </p>
+</td>
+  </tr>
+  <tr>
+    <td>配信時間</td>
+    <td>{year} 年 {month} 月 {day} 日 {hour} 時 {minute}分</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+
+    <td>
+<input type="hidden" name="g_group_id" value="{g_group_id}" />
+<input type="hidden" name="from" value="{from}" />
+<input type="hidden" name="subject" value="{subject}" />
+<input type="hidden" name="code" value="{code}" />
+<input type="hidden" name="body" value="{body}" />
+
+<input type="hidden" name="year" value="{year}" />
+<input type="hidden" name="month" value="{month}" />
+<input type="hidden" name="day" value="{day}" />
+<input type="hidden" name="hour" value="{hour}" />
+<input type="hidden" name="minute" value="{minute}" />
+
+
+<input type="submit" name="Submit" value="配信" />
+    </td>
+  </tr>
+</table>
+</form>
+<br />
+<br />
+</body>
+</html>
+
+
+
+
+
+
+
+
+

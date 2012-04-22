@@ -1,0 +1,25 @@
+# mkdir /var/qmail/apopdb
+# /var/qmail/bin/apop -i
+	これでAPOPで使用するdababaseを作る
+# /var/qmail/bin/apop -u nob
+	nobのAPOPパスワードを設定
+
+
+
+## Table ga kowaretara
+mysql> repair table TABLENAME:
+
+
+## Error no genin
+mysql > mysql> SELECT r_id,r_address, g_timestamp FROM  record, `group` WHERE r_group_id=g_group_id  AND r_address=r_address ORDER BY r_address,g_timestamp ;
+ERROR 1016: Can't open file: 'record.MYD'. (errno: 145)
+% perror 145
+Error code 145:  Unknown error 145
+145 = Table was marked as crashed and should be repaired
+
+
+## queue setting
+echo 560 > /var/qmail/control/queuelifetime
+echo 510 > /var/qmail/control/concurrencyremote
+
+

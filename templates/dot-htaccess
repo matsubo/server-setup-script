@@ -1,0 +1,15 @@
+AuthUserFile /var/www/admin/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Please enter your ID and password"
+AuthType Basic
+require valid-user
+
+#Satisfy Any
+
+#Order Deny,Allow
+#Allow from 222.148.
+#Allow from 210.162.
+#Allow from 124.87.
+#Allow from 124.86.
+#Deny from all
+

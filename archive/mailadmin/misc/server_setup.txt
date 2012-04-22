@@ -1,0 +1,93 @@
+mod 1755 /var/qmail/service/pop3d
+chown qmaill.nofiles /var/log/pop3d
+mkdir /var/qmail/service/pop3d/log
+chmod 1755 /var/qmail/service/pop3d/log
+mkdir /var/log/pop3d
+chown qmaill.nofiles /var/log/pop3d
+
+
+
+mkdir /var/qmail/service/smtpd
+chmod 1755 /var/qmail/service/smtpd
+mkdir /var/qmail/service/smtpd/log
+chown qmails.nofiles /var/qmail/service/smtpd/log
+chmod 1755 /var/qmail/service/smtpd/log
+mkdir /var/log/smtpd
+chown qmaill.nofiles /var/log/smtpd
+
+
+
+mkdir /var/qmail/service/qmail
+chmod 1755 /var/qmail/service/qmail
+mkdir /var/qmail/service/qmail/log
+chown qmails.nofiles /var/qmail/service/qmail/log
+chmod 1755 /var/qmail/service/qmail/log
+mkdir /var/log/qmail
+chown qmaill.nofiles /var/log/qmail
+
+
+
+
+
+cat << TMP > /var/qmail/service/pop3d/run
+#!/bin/sh
+exec env - PATH="/usr/local/bin:/var/qmail/bin:$PATH" \
+tcpserver -R -H -l0 -v -c 40 0 pop3 qmail-popup 0 checkpassword qmail-pop3d Maildir 2>&1
+TMP
+chmod 755 /var/qmail/service/pop3d/run
+
+
+chmod 755 /var/qmail/service/pop3d/log/run
+
+cat << TMP >  /var/qmail/service/pop3d/log/run
+#!/bin/sh
+exec \
+setuidgid qmaill \
+multilog t /var/log/pop3d
+TMP
+
+chmod 755 /var/qmail/service/pop3d/log/run
+
+
+cat << TMP >   /var/qmail/service/smtpd/run
+#!/bin/sh
+exec env - PATH="/usr/local/bin:/var/qmail/bin:$PATH" \
+tcpserver -R -H -l0 -v -c 40 -x /service/smtpd/smtp.cdb -u qmaild -g nofiles 0 smtp qmail-smtpd 2>&1
+TMP
+
+chmod 755 /var/qmail/service/smtpd/run
+
+
+cat << TMP >  /var/qmail/service/smtpd/log/run
+#!/bin/sh
+exec \
+setuidgid qmaill \
+multilog t /var/log/smtpd
+TMP
+
+chmod 755 /var/qmail/service/smtpd/log/run
+
+
+
+cat << TMP >   /var/qmail/service/qmail/run
+#!/bin/sh
+exec env - PATH="/var/qmail/bin:$PATH" \
+qmail-start ./Maildir/
+#
+TMP
+
+chmod 755 /var/qmail/service/qmail/run
+
+cat << TMP >  /var/qmail/service/qmail/log/run
+#!/bin/sh
+#
+PATH=$PATH:/usr/local/bin
+exec \
+setuidgid qmaill \
+multilog t /var/log/qmail
+#
+TMP
+
+chmod 755 /var/qmail/service/qmail/log/run
+
+

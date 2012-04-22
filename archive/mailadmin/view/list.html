@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+
+<link href="main.css" style="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>一覧</h1>
+
+{message}
+<br />
+<table border="1">
+  <tr>
+    <th>タイトル</th>
+<!--    <th>全件数</th> -->
+    <th>メール配信</th>
+    <th>表示</th>
+    <th>エラーCSV</th>
+    <th>削除</th>
+    <th>登録日時</th>
+  </tr>
+<!-- BEGIN RECORD -->
+  <tr>
+    <td>{g_title}</td>
+<!--    <td>{count}</td>-->
+    <td><a href="compose.php?g_group_id={g_group_id}"><strong>メール配信</strong></a></td>
+    <td><a href="record.php?g_group_id={g_group_id}">表示</a></td>
+    <td><a href="csv.php?g_group_id={g_group_id}">Download</a></td>
+    <td><a href="group_delete.php?g_group_id={g_group_id}" onClick="if( !confirm('削除しますか？') ) { return false; }">削除</a></td>
+    <td>{g_timestamp}</td>
+  </tr>
+<!-- END RECORD -->
+</table>
+
+
+<br />
+<br />
+<a href="../index.html">トップへ戻る</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+*/1 * * * * matsu       /usr/local/bin/php -q  /home/matsu/public_html/mail/cron/SendScheduleAction.php > /dev/null

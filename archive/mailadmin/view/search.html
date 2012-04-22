@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+<link href="main.css" style="text/css" rel="stylesheet"/>
+<script language="javascript">
+
+function submitPage(page){
+	document.form1.page.value = page;
+	document.form1.submit();
+}
+</script>
+</head>
+<body>
+<h1>メールアドレス検索</h1>
+<form name="form1" id="form1" method="post" action="search.php">
+  <table width="575" border="1" cellpadding="3" cellspacing="0">
+    <tr>
+      <td>メールアドレス</td>
+      <td><input name="form_r_address_r" class="textfield" id="r_sentnum_r" value="{form_r_address_r}" size="5" style="ime-mode: disabled" />
+(文)      </td>
+      <td><input name="form_r_address" class="textfield" id="r_address" value="{form_r_address}" size="40" style="ime-mode: disabled"/>
+      </td>
+    </tr>
+    <tr>
+      <td>会社名</td>
+      <td><input name="form_g_title_r" class="textfield" id="r_sentnum_r" value="{form_g_title_r}" size="5" style="ime-mode: disabled" />
+(文)      </td>
+      <td><input name="form_g_title" class="textfield" id="r_address" value="{form_g_title}" size="40" />
+      </td>
+    </tr>
+    <tr>
+      <td width="22%">送信回数</td>
+      <td width="12%"><input name="form_r_sent_num_r" class="textfield" id="r_sentnum3" value="{form_r_sent_num_r}" size="5" style="ime-mode: disabled" />
+      (数)      </td>
+      <td width="66%"><input name="form_r_sent_num" class="textfield" id="form_r_sent_num" value="{form_r_sent_num}" size="40" style="ime-mode: disabled"/>
+      </td>
+    </tr>
+    <tr>
+      <td>配信拒否</td>
+      <td><input name="form_r_validity_r" class="textfield" id="form_r_validity_r" value="{form_r_validity_r}" size="5" style="ime-mode: disabled" />
+      (数)</td>
+      <td><input name="form_r_validity" class="textfield"  value="{form_r_validity}" size="40" style="ime-mode: disabled"/> 
+        <br />
+      有効：1　配信拒否設定：0</td>
+    </tr>
+    <tr>
+      <td>エラーメール</td>
+      <td><input name="form_r_noerror_r" class="textfield" id="form_r_noerror_r" value="{form_r_noerror_r}" size="5" style="ime-mode: disabled" />
+      (数)</td>
+      <td><input name="form_r_noerror" class="textfield"  value="{form_r_noerror}" size="40" style="ime-mode: disabled"/> 
+        <br />
+      有効：1　エラーメール：0</td>
+    </tr>
+    <tr>
+      <td>会員</td>
+      <td><input name="form_r_member_r" class="textfield" id="form_r_member_r" value="{form_r_member_r}" size="5" style="ime-mode: disabled" />
+(数)      </td>
+      <td><input name="form_r_member" class="textfield"  value="{form_r_member}" size="40" style="ime-mode: disabled"/>
+        <br />
+      会員：1 非会員：0     </td>
+    </tr>
+    <tr>
+      <td colspan="3">wildcard: &quot;%&quot;<br />
+<ul><li>(文)演算子：'LIKE', '=', '!='</li>
+<li>(数)に対する演算子： '=', '&gt;', '&gt;=', '&lt;' , '&lt;=', '!='</li>
+</ul></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+      
+      <input type="hidden" name="page"   value="0"  />
+      
+      <input type="submit" value="検索" />
+      </td>
+    </tr>
+  </table>
+  <br />
+</form>
+{count_from} - {count_to} (全<strong>{count_all}</strong>件中) <br />
+<a href="javascript:submitPage({previous})">&lt;&lt;前へ</a> {message} <a href="javascript:submitPage({next})">次へ&gt;&gt;</a>
+<table border="1">
+  <tr>
+    <th>メールアドレス</th>
+    <th>登録名</th>
+    <th>配信拒否</th>
+    <th>エラーメール</th>
+    <th>会員</th>
+    <th>送信回数</th>
+    <th>最終送信日時</th>
+  </tr>
+  <!-- BEGIN RECORD -->
+  <tr>
+    <td>{r_address}</td>
+    <td>{g_title} [ <a href="record.php?g_group_id={r_group_id}">一覧</a> ]</td>
+    <td style="text-align:center;">{r_validity}</td>
+    <td style="text-align:center;">{r_noerror}</td>
+    <td style="text-align:center;">{r_member}</td>
+    <td style="align:center;">{r_sentnum}</td>
+    <td>{r_lastsent}</td>
+  </tr>
+  <!-- END RECORD -->
+</table>
+<br />
+<br />
+<a href="../index.html">トップへ戻る</a>
+</body>
+</html>

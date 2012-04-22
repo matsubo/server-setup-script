@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+
+<link href="main.css" style="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>ログ表示</h1>
+
+<form name="form1" id="form1" method="post" action="send.php">
+<table width="75%" border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <td>Fromアドレス</td>
+    <td>{from}</td>
+  </tr>
+  <tr>
+    <td>件名</td>
+    <td>{subject}
+    </td>
+  </tr>
+  <tr>
+    <td>文面</td>
+    <td><p>
+      <pre>{body}</pre>
+    </p>
+</td>
+<!--
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+
+    <td>
+<input type="hidden" name="g_group_id" value="{g_group_id}" />
+<input type="hidden" name="from" value="{from}" />
+<input type="hidden" name="subject" value="{subject}" />
+<input type="hidden" name="body" value="{body}" />
+<input type="submit" name="Submit" value="配信" />
+
+</td>
+  </tr>
+-->
+</table>
+</form>
+
+
+
+<br />
+<br />
+<a href="confirm_schedule.php">一覧へ戻る</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

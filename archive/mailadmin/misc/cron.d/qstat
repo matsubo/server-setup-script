@@ -1,0 +1,1 @@
+*/1 * * * * root        /home/matsu/public_html/mailadmin/cron/stat.sh > /dev/null

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+
+<link href="main.css" style="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>メールアドレス一覧</h1>
+{from_link} {to_link}
+<br />
+<strong>{from}</strong>件
+から
+<strong>{to}</strong>件目 （<strong>{record_count}</strong>件中）
+<br />
+<table border="1">
+  <tr>
+    <th>メールアドレス</th>
+    <th>配信拒否</th>
+    <th>エラーメール</th>
+    <th>会員</th>
+    <th>送信回数<br />
+<!--
+(<a href="reset_sentnum.php?g_group_id={g_group_id}" onClick="if( !confirm('送信回数をリセットしますか？') ) { return false; }">リセット</a>)
+-->
+</th>
+  </tr>
+<!-- BEGIN RECORD -->
+  <tr>
+    <td>{r_address}</td>
+    <td style="text-align:center;">{r_validity}</td>
+    <td style="text-align:center;">{r_noerror}</td>
+    <td style="text-align:center;">{r_member}</td>
+    <td>{r_sentnum}</td>
+  </tr>
+<!-- END RECORD -->
+</table>
+
+
+<br />
+<br />
+<a href="list.php">一覧へ戻る</a>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+#!/bin/sh
+exec env - PATH="/usr/local/bin:/var/qmail/bin:$PATH" \
+tcpserver -R -H -l0 -v -c 40 0 pop3 qmail-popup 0 checkpassword qmail-pop3d Maildir 2>&1
+
